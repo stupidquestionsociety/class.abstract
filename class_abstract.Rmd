@@ -1,0 +1,76 @@
+---
+title: "Abstract classification in Macroecology"
+author: "Alexander Florez Rodriguez"
+date: "11/22/2018"
+output: html_document
+---
+
+```{r echo=F, message=F}
+library(keras)
+library(knitr)
+# Chunk to classify abstracts by journal
+read_chunk("class_abstract_binary.R")
+```
+
+## The stupid question
+
+If I give you an abstract to read (just the text, forget about the format), would 
+you be able to tell me in what journal was published?
+
+Let's start easy. You only have 2 options (50% chance): you have to differentiate
+between abstracts in "Diversity and Distributions" and "Journal of Biogeography". 
+Two staple journals in Macroecology!
+
+## The stupid idea
+
+Here I use neural networks to classify abstracts by journal. I used all the abstracts
+for "Diversity and Distributions" and "Journal of Biogeography"
+available in ISI Web of knowledge to train, test and validate the neural network.
+
+## Can you guess the accuracy of the neural network?
+
+\vspace{12pt}
+\vspace{12pt}
+```{r get.abstracts, echo=F}
+
+```
+
+```{r data.segmentation, echo=F}
+
+```
+
+```{r tokenization, echo=F}
+
+```
+
+### Neural network model using a embedding layer
+```{r NN.define.model}
+
+```
+
+```{r NN.compile.model}
+
+```
+
+```{r plot.validation, fig.height=6, fig.width=12}
+```
+\vspace{12pt}
+The maximum accuracy of this model is `r max(history$metrics$val_acc)`
+
+\vspace{12pt}
+\vspace{12pt}
+### Neural network model using a embedding layer + a densely connected layer
+```{r adding.dense.layer, fig.height=6, fig.width=12}
+```
+\vspace{12pt}
+The maximum accuracy of this model is `r max(history$metrics$val_acc)`
+
+### Neural network model using a embedding layer + a densely connected layer + a longer text sequence
+```{r longer.sequence.lenght, fig.height=6, fig.width=12}
+```
+The maximum accuracy of this model is `r max(history$metrics$val_acc)`
+
+## The stupid result
+Using these simple neural networks we can classify abstracts by journal with around 83% of accuracy...
+Now, can we use the same approach to classify papers by topic (e.g. latitudinal gradient)? or by traits? or
+by taxonomic group?
