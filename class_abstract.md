@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The stupid question
 -------------------
 
@@ -102,3 +103,6 @@ Using these simple neural networks we can classify abstracts by journal
 with around 83% of accuracy… Now, can we use the same approach to
 classify papers by topic (e.g. latitudinal gradient)? or by traits? or
 by taxonomic group?
+=======
+# class.abstract
+>>>>>>> f9f31b0a05e549359cece283135bb9a154d576cc
