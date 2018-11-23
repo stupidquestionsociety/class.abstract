@@ -2,7 +2,7 @@
 title: "Abstract classification in Macroecology"
 author: "Alexander Florez Rodriguez"
 date: "11/22/2018"
-output: html_document
+output: md_document
 ---
 
 ```{r echo=F, message=F}
